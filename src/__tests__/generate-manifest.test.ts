@@ -1,5 +1,23 @@
 import { describe, it, expect } from "vitest";
-import { toRfc822, escapeXml } from "../generate-manifest.ts";
+import { toRfc822, escapeXml, REPORT_FILES, buildRadarManifest } from "../generate-manifest.ts";
+
+describe("REPORT_FILES", () => {
+  it("registers both Radar language files in manifest order", () => {
+    const zhIndex = REPORT_FILES.indexOf("ai-radar");
+    expect(zhIndex).toBeGreaterThan(-1);
+    expect(REPORT_FILES[zhIndex + 1]).toBe("ai-radar-en");
+  });
+});
+
+describe("buildRadarManifest", () => {
+  it("keeps valid Radar dates in newest-first order", () => {
+    expect(buildRadarManifest(["2026-08-19", "junk", "2026-08-20"], "2026-08-20T01:00:00.000Z")).toEqual({
+      schemaVersion: 1,
+      generatedAt: "2026-08-20T01:00:00.000Z",
+      dates: ["2026-08-20", "2026-08-19"],
+    });
+  });
+});
 
 // ---------------------------------------------------------------------------
 // toRfc822

@@ -42,6 +42,15 @@ jobs:
           DIGEST_REPO: ${{ github.repository }}
         run: pnpm start
 
+      - name: Sync Radar to Feishu Bitable
+        continue-on-error: true
+        env:
+          FEISHU_APP_ID: ${{ secrets.FEISHU_APP_ID }}
+          FEISHU_APP_SECRET: ${{ secrets.FEISHU_APP_SECRET }}
+          FEISHU_BITABLE_APP_TOKEN: ${{ secrets.FEISHU_BITABLE_APP_TOKEN }}
+          FEISHU_BITABLE_TABLE_ID: ${{ secrets.FEISHU_BITABLE_TABLE_ID }}
+        run: pnpm sync:feishu-bitable
+
       - name: Commit digest files
         run: |
           git config user.name "github-actions[bot]"
@@ -61,7 +70,7 @@ jobs:
 
       - name: Commit manifest and feed
         run: |
-          git add manifest.json feed.xml
+          git add manifest.json radar-manifest.json feed.xml
           if ! git diff --cached --quiet; then
             git commit -m "chore: update manifest.json"
             git pull --rebase
@@ -72,13 +81,13 @@ jobs:
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID || '@agents_radar' }}
-          PAGES_URL: https://duanyytop.github.io/agents-radar
+          PAGES_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
         run: pnpm notify
 
       - name: Send Feishu notification
         env:
           FEISHU_WEBHOOK_URLS: ${{ secrets.FEISHU_WEBHOOK_URLS }}
-          PAGES_URL: https://duanyytop.github.io/agents-radar
+          PAGES_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
         run: pnpm notify:feishu
 
       - name: Close stale issues
@@ -86,4 +95,3 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DIGEST_REPO: ${{ github.repository }}
         run: pnpm close-stale
-

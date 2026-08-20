@@ -13,6 +13,8 @@
     "manifest": "tsx src/generate-manifest.ts",
     "notify": "tsx src/notify.ts",
     "notify:feishu": "tsx src/feishu.ts",
+    "sync:feishu-bitable": "tsx src/feishu-bitable.ts",
+    "sync:feishu-bitable:all": "tsx src/feishu-bitable.ts --all",
     "close-stale": "tsx src/close-stale-issues.ts",
     "xiaohongshu": "tsx src/social.ts xiaohongshu",
     "test": "vitest run",

@@ -29,8 +29,20 @@ import {
   buildPeersComparisonPrompt,
   buildSkillsPrompt,
 } from "./prompts.ts";
-import { buildTrendingPrompt, buildHighlightsPrompt, type ReportHighlights } from "./prompts-data.ts";
-import { callLlm, parseLlmJson, saveFile, autoGenFooter, LLM_TOKENS_TRENDING } from "./report.ts";
+import {
+  buildTrendingPrompt,
+  buildHighlightsPrompt,
+  buildRadarPrompt,
+  type ReportHighlights,
+} from "./prompts-data.ts";
+import {
+  callLlm,
+  parseLlmJson,
+  saveFile,
+  autoGenFooter,
+  LLM_TOKENS_TRENDING,
+  LLM_TOKENS_LISTING,
+} from "./report.ts";
 import {
   buildCliReportContent,
   buildOpenclawReportContent,
@@ -44,10 +56,13 @@ import {
   saveArxivReport,
   saveHfReport,
   saveCommunityReport,
+  saveRadarReport,
 } from "./report-savers.ts";
 import { loadWebState, fetchSiteContent, type WebFetchResult, type WebState } from "./web.ts";
 import { fetchTrendingData, type TrendingData } from "./trending.ts";
 import { fetchHnData, type HnData } from "./hn.ts";
+import { generateRadarData } from "./radar.ts";
+import { saveRadarJson } from "./radar-json.ts";
 import { fetchPhData, type PhData } from "./ph.ts";
 import { fetchArxivData, type ArxivData } from "./arxiv.ts";
 import { fetchHfData, type HfData } from "./hf.ts";
@@ -173,7 +188,9 @@ async function fetchAllData(
         trendingFetchSuccess: false,
       }),
     ),
-    fetchHnData().catch((): HnData => ({ stories: [], fetchSuccess: false })),
+    fetchHnData().catch(
+      (): HnData => ({ stories: [], fetchSuccess: false, scannedCount: 0, duplicateCount: 0 }),
+    ),
     fetchPhData().catch((): PhData => ({ products: [], fetchSuccess: false })),
     fetchArxivData().catch((): ArxivData => ({ papers: [], fetchSuccess: false })),
     fetchHfData().catch((): HfData => ({ models: [], fetchSuccess: false })),
@@ -345,6 +362,12 @@ async function main(): Promise<void> {
     lobstersData,
   } = await fetchAllData(since, webState);
 
+  const radarDataPromise = generateRadarData(hnData, now, async () => {
+    console.log("  [radar] Calling LLM for bilingual editorial scoring...");
+    const raw = await callLlm(buildRadarPrompt(hnData.stories, dateStr), LLM_TOKENS_LISTING);
+    return parseLlmJson<unknown>(raw);
+  });
+
   const peerIds = new Set(OPENCLAW_PEERS.map((p) => p.id));
   const infraIds = new Set(INFRA_REPOS.map((r) => r.id));
   const fetchedCli = fetched.filter(
@@ -463,6 +486,9 @@ async function main(): Promise<void> {
     await saveWebReport(webResults, webState, utcStr, dateStr, digestRepo, autoGenFooter(lang), lang);
   }
 
+  const radarData = await radarDataPromise;
+  console.log(`  Saved ${saveRadarJson(radarData, dateStr, now.toISOString())}`);
+
   await Promise.all([
     saveTrendingReport(
       trendingData,
@@ -484,6 +510,8 @@ async function main(): Promise<void> {
     ),
     saveHnReport(hnData, utcStr, dateStr, digestRepo, autoGenFooter("zh"), "zh"),
     saveHnReport(hnData, utcStr, dateStr, digestRepo, autoGenFooter("en"), "en"),
+    saveRadarReport(radarData, utcStr, dateStr, digestRepo, autoGenFooter("zh"), "zh"),
+    saveRadarReport(radarData, utcStr, dateStr, digestRepo, autoGenFooter("en"), "en"),
     savePhReport(phData, utcStr, dateStr, digestRepo, autoGenFooter("zh"), "zh"),
     savePhReport(phData, utcStr, dateStr, digestRepo, autoGenFooter("en"), "en"),
     saveArxivReport(arxivData, utcStr, dateStr, digestRepo, autoGenFooter("zh"), "zh"),
@@ -514,6 +542,7 @@ async function main(): Promise<void> {
     ["ai-trending", "ai-trending.md", "ai-trending-en.md"],
     ["ai-web", "ai-web.md", "ai-web-en.md"],
     ["ai-hn", "ai-hn.md", "ai-hn-en.md"],
+    ["ai-radar", "ai-radar.md", "ai-radar-en.md"],
     ["ai-ph", "ai-ph.md", "ai-ph-en.md"],
     ["ai-arxiv", "ai-arxiv.md", "ai-arxiv-en.md"],
     ["ai-hf", "ai-hf.md", "ai-hf-en.md"],

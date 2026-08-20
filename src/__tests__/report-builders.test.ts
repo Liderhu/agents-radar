@@ -1,11 +1,14 @@
+import { marked } from "marked";
 import { describe, it, expect } from "vitest";
 import {
   buildCliReportContent,
   buildOpenclawReportContent,
   buildInfraReportContent,
+  buildRadarReportContent,
 } from "../report-builders.ts";
 import type { RepoDigest } from "../prompts.ts";
 import type { GitHubItem, GitHubRelease } from "../github.ts";
+import type { RadarData } from "../radar.ts";
 
 // ---------------------------------------------------------------------------
 // Fixtures
@@ -19,6 +22,35 @@ function makeDigest(overrides: Partial<RepoDigest> = {}): RepoDigest {
     releases: [],
     summary: "Test summary content",
     ...overrides,
+  };
+}
+
+function makeRadarData(count: number, mode: RadarData["mode"]): RadarData {
+  const items: RadarData["items"] = Array.from({ length: count }, (_, index) => ({
+    story: {
+      id: String(index + 1),
+      hnRank: index + 1,
+      title: `AI story ${index + 1}`,
+      url: `https://example.com/${index + 1}`,
+      hnUrl: `https://news.ycombinator.com/item?id=${index + 1}`,
+      points: 100 - index,
+      comments: 20 - index,
+      author: "author",
+      createdAt: "2026-08-11T00:00:00.000Z",
+    },
+    breakdown: { points: 20, comments: 8, rank: 19, freshness: 10 },
+    baseScore: 57,
+    editorialScore: mode === "deepseek" ? 25 : 0,
+    totalScore: 95 - index,
+    summary: { zh: `摘要 ${index + 1}`, en: `Summary ${index + 1}` },
+    reason: { zh: `理由 ${index + 1}`, en: `Reason ${index + 1}` },
+  }));
+  return {
+    items,
+    top5: items.slice(0, 5),
+    mode,
+    scannedCount: count + 2,
+    duplicateCount: 2,
   };
 }
 
@@ -190,5 +222,100 @@ describe("buildInfraReportContent", () => {
     expect(result).toContain("Projects covered: 1");
     expect(result).toContain("Cross-Project Comparison");
     expect(result).toContain("Per-Project Reports");
+  });
+});
+
+describe("buildRadarReportContent", () => {
+  it("renders metadata, exactly five recommendations, and every candidate in Chinese", () => {
+    const data = makeRadarData(6, "deepseek");
+    const result = buildRadarReportContent(data, "2026-08-12 00:00", "2026-08-12", "\nfooter", "zh");
+    expect(result).toContain("# AI 信息雷达 2026-08-12");
+    expect(result).toContain("扫描 8 条");
+    expect(result).toContain("候选 6 条");
+    expect(result).toContain("去重 2 条");
+    expect(result).toContain("DeepSeek 编辑评分");
+    expect(result.match(/^### \d+\./gm) ?? []).toHaveLength(5);
+    expect(result.match(/^\| \d+ \|/gm) ?? []).toHaveLength(6);
+    expect(new Set(data.top5.map((item) => item.story.url)).size).toBe(5);
+    for (const item of data.top5) {
+      expect(result.split(item.story.url)).toHaveLength(3);
+    }
+  });
+
+  it("marks deterministic mode and renders all available items when fewer than five exist", () => {
+    const data = makeRadarData(3, "deterministic");
+    const result = buildRadarReportContent(data, "2026-08-12 00:00", "2026-08-12", "", "en");
+    expect(result).toContain("# AI Information Radar 2026-08-12");
+    expect(result).toContain("Deterministic fallback");
+    expect(result).toContain("Only 3 candidates were available");
+    expect(result.match(/^### \d+\./gm) ?? []).toHaveLength(3);
+  });
+
+  it("preserves external story titles and distinct article and HN discussion anchors", () => {
+    const data = makeRadarData(1, "deepseek");
+    data.items[0]!.story.title = "A ] B";
+    const markdown = buildRadarReportContent(data, "2026-08-12 00:00", "2026-08-12", "", "en");
+    const html = marked.parse(markdown, { async: false });
+
+    expect(html.match(/<a href="https:\/\/example\.com\/1">A \] B<\/a>/g) ?? []).toHaveLength(2);
+    expect(html).toContain('<a href="https://news.ycombinator.com/item?id=1">HN discussion</a>');
+  });
+
+  it.each([
+    ["closing parenthesis", "https://example.com/a)tail", "https://example.com/a)tail"],
+    ["less-than sign", "https://example.com/a<tail", "https://example.com/a%3Ctail"],
+    ["greater-than sign", "https://example.com/a>tail", "https://example.com/a%3Etail"],
+    ["whitespace", "https://example.com/a tail", "https://example.com/a%20tail"],
+    ["backslash", "https://example.com/a\\tail", "https://example.com/a%5Ctail"],
+    ["C1 control", "https://example.com/a\u0085tail", "https://example.com/a%C2%85tail"],
+    ["lone surrogate", "https://example.com/a\uD800tail", "https://example.com/a%EF%BF%BDtail"],
+  ])("preserves %s in parsed Top 5 and table article links", (_case, inputUrl, expectedHref) => {
+    const data = makeRadarData(1, "deepseek");
+    data.items[0]!.story.url = inputUrl;
+
+    const markdown = buildRadarReportContent(data, "2026-08-12 00:00", "2026-08-12", "", "en");
+    const html = marked.parse(markdown, { async: false });
+    expect(markdown).toContain(`(<${expectedHref}>)`);
+    const articleHrefs = Array.from(html.matchAll(/<a href="([^"]+)">AI story 1<\/a>/g), (match) => match[1]);
+
+    expect(articleHrefs).toEqual([expectedHref, expectedHref]);
+    expect(html).toContain('<a href="https://news.ycombinator.com/item?id=1">HN discussion</a>');
+  });
+
+  it("preserves a backslash followed by a pipe in a parsed table link label", () => {
+    const data = makeRadarData(1, "deepseek");
+    data.items[0]!.story.title = String.raw`alpha \| beta`;
+
+    const markdown = buildRadarReportContent(data, "2026-08-12 00:00", "2026-08-12", "", "en");
+    const html = marked.parse(markdown, { async: false });
+    const cells = Array.from(html.matchAll(/<td[^>]*>(.*?)<\/td>/g), (match) => match[1]);
+
+    expect(cells).toContain(String.raw`<a href="https://example.com/1">alpha \| beta</a>`);
+  });
+
+  it("preserves a backslash followed by a pipe in the parsed summary cell", () => {
+    const data = makeRadarData(1, "deepseek");
+    data.items[0]!.summary.en = String.raw`alpha \| beta`;
+
+    const markdown = buildRadarReportContent(data, "2026-08-12 00:00", "2026-08-12", "", "en");
+    const html = marked.parse(markdown, { async: false });
+    const cells = Array.from(html.matchAll(/<td[^>]*>(.*?)<\/td>/g), (match) => match[1]);
+
+    expect(cells).toHaveLength(7);
+    expect(cells[5]).toBe("2026-08-11T00:00:00.000Z");
+    expect(cells[6]).toBe(String.raw`alpha \| beta`);
+  });
+  it("caps recommendations at the first five items even when top5 is oversized", () => {
+    const data = makeRadarData(6, "deepseek");
+    data.top5 = data.items;
+    const result = buildRadarReportContent(data, "2026-08-12 00:00", "2026-08-12", "", "en");
+
+    expect(result.match(/^### \d+\. \[AI story \d+\]/gm) ?? []).toEqual([
+      "### 1. [AI story 1]",
+      "### 2. [AI story 2]",
+      "### 3. [AI story 3]",
+      "### 4. [AI story 4]",
+      "### 5. [AI story 5]",
+    ]);
   });
 });
