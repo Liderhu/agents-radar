@@ -27,6 +27,10 @@ Browse all historical digests in a clean, dark-themed interface — no login req
 
 ![Web UI](assets/web-en.png)
 
+### Standalone Information Radar
+
+GitHub Pages also serves `radar.html`, a focused reader for the daily Information Radar. It shows the five strongest signals first, then all 30 ranked candidates with local search and date navigation. The page reads `radar-manifest.json` and the versioned `digests/<date>/ai-radar.json` files directly; no login or backend is required. Historical dates begin when structured Radar JSON generation is enabled.
+
 ## Telegram Channel & Feishu Group
 
 Subscribe to get daily digest notifications pushed directly to your preferred platform. Each message links to all reports for that day (ZH and EN variants) plus the Web UI and RSS feed.
@@ -254,8 +258,14 @@ Go to **Settings → Secrets and variables → Actions** and add:
 | `TELEGRAM_BOT_TOKEN` | optional | Telegram bot token from [@BotFather](https://t.me/BotFather). If set, a message is sent after each digest run |
 | `TELEGRAM_CHAT_ID` | optional | Telegram chat/channel/group ID to send notifications to |
 | `FEISHU_WEBHOOK_URLS` | optional | Comma-separated Feishu custom bot webhook URLs. If set, a card message is sent to each group after each digest run |
+| `FEISHU_APP_ID` | optional | China Feishu custom app ID for Bitable history sync |
+| `FEISHU_APP_SECRET` | optional | China Feishu custom app secret; store only as a repository secret |
+| `FEISHU_BITABLE_APP_TOKEN` | optional | Target Base app token |
+| `FEISHU_BITABLE_TABLE_ID` | optional | Target Bitable table ID |
 
 > `GITHUB_TOKEN` is provided automatically by GitHub Actions. When using `github-copilot` as the provider, the same `GITHUB_TOKEN` is used for LLM calls.
+
+For the four Bitable secrets and exact field types, follow [China Feishu Bitable setup](docs/feishu-bitable-setup.md). The Bitable app credentials are separate from `FEISHU_WEBHOOK_URLS`.
 
 **Setting up Telegram notifications** (optional):
 1. Message [@BotFather](https://t.me/BotFather) on Telegram, create a bot, and copy the token

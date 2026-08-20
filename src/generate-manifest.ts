@@ -6,6 +6,7 @@ import { REPORT_LABELS } from "./i18n.ts";
 const DIGESTS_DIR = "digests";
 const MANIFEST_PATH = "manifest.json";
 const FEED_PATH = "feed.xml";
+const RADAR_MANIFEST_PATH = "radar-manifest.json";
 const SITE_URL = "https://duanyytop.github.io/agents-radar";
 const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
 export const REPORT_FILES: readonly string[] = [
@@ -48,6 +49,23 @@ interface DateEntry {
 interface Manifest {
   generated: string;
   dates: DateEntry[];
+}
+
+export interface RadarManifest {
+  schemaVersion: 1;
+  generatedAt: string;
+  dates: string[];
+}
+
+export function buildRadarManifest(dates: string[], generatedAt: string): RadarManifest {
+  return {
+    schemaVersion: 1,
+    generatedAt,
+    dates: dates
+      .filter((date) => DATE_RE.test(date))
+      .sort()
+      .reverse(),
+  };
 }
 
 interface ReportContent {
@@ -121,6 +139,13 @@ async function main(): Promise<void> {
 
   fs.writeFileSync(MANIFEST_PATH, JSON.stringify(manifest, null, 2) + "\n");
   console.log(`manifest.json updated: ${entries.length} dates`);
+
+  const radarDates = fs
+    .readdirSync(DIGESTS_DIR)
+    .filter((date) => fs.existsSync(path.join(DIGESTS_DIR, date, "ai-radar.json")));
+  const radarManifest = buildRadarManifest(radarDates, new Date().toISOString());
+  fs.writeFileSync(RADAR_MANIFEST_PATH, JSON.stringify(radarManifest, null, 2) + "\n");
+  console.log(`radar-manifest.json updated: ${radarManifest.dates.length} dates`);
 
   // ── RSS Feed ──────────────────────────────────────────────────────────────────
 

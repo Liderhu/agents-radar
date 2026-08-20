@@ -62,6 +62,7 @@ import { loadWebState, fetchSiteContent, type WebFetchResult, type WebState } fr
 import { fetchTrendingData, type TrendingData } from "./trending.ts";
 import { fetchHnData, type HnData } from "./hn.ts";
 import { generateRadarData } from "./radar.ts";
+import { saveRadarJson } from "./radar-json.ts";
 import { fetchPhData, type PhData } from "./ph.ts";
 import { fetchArxivData, type ArxivData } from "./arxiv.ts";
 import { fetchHfData, type HfData } from "./hf.ts";
@@ -486,6 +487,7 @@ async function main(): Promise<void> {
   }
 
   const radarData = await radarDataPromise;
+  console.log(`  Saved ${saveRadarJson(radarData, dateStr, now.toISOString())}`);
 
   await Promise.all([
     saveTrendingReport(
