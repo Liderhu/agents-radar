@@ -1,0 +1,166 @@
+{
+  "zh": {
+    "ai-cli": [
+      "OpenAI Codex 24小时连发3个alpha版本",
+      "Qwen Code 强化CI/CD安全与自动修复",
+      "Claude Code 发布v2.1.236/237稳定迭代",
+      "Kimi Code 与 Grok Build 静默无更新",
+      "OpenCode/Pi/CodeWhale 开源社区活跃重构",
+      "静默失败与长会话记忆丢失成共同痛点"
+    ],
+    "ai-agents": [
+      "OpenClaw 24小时合入/关闭150个PR",
+      "SQLite transcript 清理阻塞事件循环引热议",
+      "WhatsApp 图片消息卡死主通道受关注",
+      "P0级gateway启动失败问题持续未闭环",
+      "当前处于v2026.8.1-beta.2验证阶段",
+      "维护者评审带宽成项目进度瓶颈"
+    ],
+    "ai-infra": [
+      "vLLM 针对 Kimi-K3 推出 GEMM-AR 扩展",
+      "llama.cpp 一日发布6个新版本",
+      "Ollama 发布 v0.32.15 修复回归",
+      "推测解码 MTP/DFlash 成 Bug 高发区",
+      "LiteLLM 新增 Parallel AI 与 Anthropic 支持",
+      "Unsloth 发布 v0.1.801-beta 聚焦稳定性"
+    ],
+    "ai-trending": [
+      "MoneyPrinterTurbo 单日新增2774星领跑",
+      "Agent Skills 生态爆发，技能包集中登榜",
+      "火山引擎 OpenViking 定位自进化Context数据库",
+      "Cursor 发布官方插件规范与插件库",
+      "ollama 稳居本地模型工具榜首",
+      "Rust 向量索引 turbovec 今日+251星"
+    ],
+    "ai-web": [
+      "Claude 蛋白质结合剂设计成功率22%-35%",
+      "Claude 将黎曼零点下界从41.6%提至67.2%",
+      "Anthropic 发布5篇科研与合规深度内容",
+      "OpenAI 密集释放商业化信号与生态扩张",
+      "Claude 23分钟完成化学分析验证",
+      "两家实验室科学vs商业定位愈发分明"
+    ],
+    "ai-hn": [
+      "“Don't paste the AI” 932分引热议",
+      "OpenRouter 宣布并入 Stripe 引爆讨论",
+      "Claude Code 的 AGENTS.md 诉求获338分",
+      "Claude 逆向写HP打印机macOS驱动",
+      "DFlash 2 并行解码方案获92分",
+      "数学在AI时代论文引发242条评论"
+    ],
+    "ai-radar": [
+      "“Don't paste the AI” 以84.6居榜首",
+      "OpenRouter 加入 Stripe 获82.8高分",
+      "AGENTS.md 支持请求位列第三",
+      "Unsloth Dynamic 3.0 GGUF 76.6分",
+      "“清理Claude 5 token呕吐物”工具上榜",
+      "今日头部话题聚焦内容污染与AI整合"
+    ],
+    "ai-arxiv": [
+      "SPADE 用自适应环境打破自对弈瓶颈",
+      "Open-MOPD 修复多教师蒸馏能力失衡",
+      "实证揭示AI后训练AI的执行与改进鸿沟",
+      "ReWEIGH 校准视觉证据缓解LVLM幻觉",
+      "Eureka 面向科学发现的任务条件编排",
+      "DeepWeaver 弥合开放问答证据合成缺口"
+    ],
+    "ai-hf": [
+      "Qwen3.8-27B 周点赞11680领跑热榜",
+      "DeepSeek-V4-Flash 下载达255万",
+      "Kimi K3 以10880赞成社区新亮点",
+      "MiniMax-Music3 带动音乐生成入主流",
+      "LTX-2.5 下载61万领跑视频生成",
+      "Qwen3.8 衍生量化版本大量上榜"
+    ],
+    "ai-community": [
+      "企业级 MCP 网关方案全景指南获23赞",
+      "提示注入测试假阴性引发方法论反思",
+      "OWASP 规则冲击自建 AI 代码审查器",
+      "MCP 记忆服务器成Agent落地新焦点",
+      "Opus 5 自我检查评审瓶颈实测分享",
+      "1985年老演讲重思AI边界引热议"
+    ]
+  },
+  "en": {
+    "ai-cli": [
+      "8 of 10 CLI tools shipped releases in 24h",
+      "Claude Code released patches v2.1.236 and v2.1.237",
+      "Codex shipped 3 alphas in 24 hours",
+      "Qwen Code shipped 6 artifacts including benchmark smokes",
+      "Windows GPU-process crashes plague multiple CLI tools",
+      "Kimi Code and Grok Build dormant; others active"
+    ],
+    "ai-agents": [
+      "OpenClaw: 500 issues and 500 PRs updated in 24h",
+      "OpenClaw 150 PRs merged/closed in 24 hours",
+      "OpenClaw v2026.8.1-beta.2 validation still in progress",
+      "OpenClaw no new release; intense maintenance cycle",
+      "OpenClaw fixes session state and message delivery bugs",
+      "OpenClaw maintainers stretched; many issues await review"
+    ],
+    "ai-infra": [
+      "llama.cpp shipped 6 releases b10505-b10516",
+      "Ollama shipped v0.32.15",
+      "Unsloth shipped v0.1.801-beta",
+      "SGLang 0.5.17 implicated in regressions",
+      "Agent tool-calling remains least reliable layer",
+      "Credential leaks and cross-request contamination reported"
+    ],
+    "ai-trending": [
+      "MoneyPrinterTurbo tops trends with +2,774 stars",
+      "Agent skills breakout: mattpocock/skills +2,267 stars",
+      "Cursor plugin spec gains +473 stars in a day",
+      "OpenViking +955 stars signals agent memory layer",
+      "obra/superpowers +749 stars for coding-agent workflows",
+      "Modular (Mojo) adds +340 stars for AI compilation"
+    ],
+    "ai-web": [
+      "Claude protein binders hit 14 of 15 targets",
+      "Claude automated lab analysis in under 25 minutes",
+      "Unreleased Claude model lifts Riemann zeta bound to 67.2%",
+      "Anthropic red team: multiagent system failures emerge",
+      "OpenAI launches Zero Data Retention for frontier models",
+      "OpenAI expands ChatGPT Ads in Europe, hires CRO"
+    ],
+    "ai-hn": [
+      "OpenRouter is joining Stripe, draws ~1,000 HN points",
+      "Don't paste the AI backlash tops HN with 932 points",
+      "Claude Code AGENTS.md support request trends on HN",
+      "Ornith-1.5 self-scaffolding agent model sparks debate",
+      "DFlash 2 proposes parallel drafting for LLM serving",
+      "HN skeptical of Asana 5-years-in-2-weeks claim"
+    ],
+    "ai-radar": [
+      "Don't paste the AI tops radar at 84.6",
+      "OpenRouter joining Stripe ranks second on AI radar",
+      "Claude Code AGENTS.md request scores 77.6",
+      "Unsloth Dynamic 3.0 GGUFs recommended for local deployment",
+      "Tool cleans up Claude 5 token vomit with separate LLM",
+      "Radar scanned 150 HN stories, 30 candidates, no duplicates"
+    ],
+    "ai-arxiv": [
+      "Paper defines verification autonomy levels L0-L5",
+      "On-policy distillation aligns token guidance with tasks",
+      "ReWEIGH reduces hallucinations in vision-language models",
+      "Self-improvement via adaptive synthetic environments",
+      "Distillation method improves long-context reasoning",
+      "Papers focus on trustworthy LLMs and verifiable behavior"
+    ],
+    "ai-hf": [
+      "Qwen3.8-27B dominates with wide GGUF/FP8/MLX ecosystem",
+      "Unsloth's Qwen3.8 GGUF passes 5.1M downloads",
+      "DeepSeek V4 Flash reaches 2.5M downloads",
+      "Kimi K3 is most-liked model at 10,880 likes",
+      "MiniMax expands with Music3 and H3 video model",
+      "DeepSeek V4 Pro and Flash trend among open-weight models"
+    ],
+    "ai-community": [
+      "Dev.to focuses on prompt injection and RAG hijacking",
+      "Enterprise MCP gateway comparisons trend on Dev.to",
+      "Passing prompt-injection tests while attacks still work",
+      "Memory and MCP servers popular with solo builders",
+      "Lobsters mixes 1985 AI limits lecture with interpretability",
+      "OpenAI Zero Data Retention appears on Dev.to feeds"
+    ]
+  }
+}

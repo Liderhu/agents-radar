@@ -1,0 +1,610 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-08-21",
+  "generatedAt": "2026-08-20T17:03:02.340Z",
+  "mode": "deepseek",
+  "scannedCount": 150,
+  "duplicateCount": 0,
+  "items": [
+    {
+      "key": "2026-08-21|https://dontpastetheai.com/",
+      "rank": 1,
+      "isTop5": true,
+      "title": "Don't paste the AI, please",
+      "url": "https://dontpastetheai.com/",
+      "hnUrl": "https://news.ycombinator.com/item?id=49371857",
+      "totalScore": 84.59629125264418,
+      "baseScore": 65.59629125264418,
+      "editorialScore": 19,
+      "publishedAt": "2026-08-20T08:20:44.000Z",
+      "summary": {
+        "zh": "呼吁人们不要把AI生成内容直接原样粘贴，强调人工编辑与判断。",
+        "en": "Urges people not to paste AI-generated content verbatim, emphasizing human editing and judgment."
+      },
+      "reason": {
+        "zh": "高热度讨论反映了AI内容泛滥下社区规范与协作方式的关键议题。",
+        "en": "High-engagement discussion reflects key issues around community norms and AI content overload."
+      }
+    },
+    {
+      "key": "2026-08-21|https://openrouter.ai/blog/announcements/openrouter-is-joining-stripe",
+      "rank": 2,
+      "isTop5": true,
+      "title": "OpenRouter is joining Stripe",
+      "url": "https://openrouter.ai/blog/announcements/openrouter-is-joining-stripe/",
+      "hnUrl": "https://news.ycombinator.com/item?id=49364559",
+      "totalScore": 82.75949346623028,
+      "baseScore": 60.759493466230275,
+      "editorialScore": 22,
+      "publishedAt": "2026-08-19T17:32:38.000Z",
+      "summary": {
+        "zh": "OpenRouter宣布加入Stripe，AI路由服务将与支付生态整合。",
+        "en": "OpenRouter announces it is joining Stripe, integrating AI routing with payments."
+      },
+      "reason": {
+        "zh": "行业重大动态，影响依赖OpenRouter的开发者和AI应用商业链路。",
+        "en": "Major industry news affecting developers relying on OpenRouter and AI app commerce."
+      }
+    },
+    {
+      "key": "2026-08-21|https://github.com/anthropics/claude-code/issues/6235",
+      "rank": 3,
+      "isTop5": true,
+      "title": "Feature Request: Support AGENTS.md",
+      "url": "https://github.com/anthropics/claude-code/issues/6235",
+      "hnUrl": "https://news.ycombinator.com/item?id=49367350",
+      "totalScore": 77.60269201456782,
+      "baseScore": 55.60269201456782,
+      "editorialScore": 22,
+      "publishedAt": "2026-08-19T21:19:50.000Z",
+      "summary": {
+        "zh": "社区在Claude Code仓库要求原生支持AGENTS.md，统一智能体配置规范。",
+        "en": "Community requests native AGENTS.md support in Claude Code to standardize agent configs."
+      },
+      "reason": {
+        "zh": "与AI编码智能体工作流直接相关，参与讨论或实现可改善团队自动化。",
+        "en": "Directly relevant to AI coding agent workflows; discussion or implementation improves team automation."
+      }
+    },
+    {
+      "key": "2026-08-21|https://unsloth.ai/docs/basics/dynamic-3.0-ggufs",
+      "rank": 4,
+      "isTop5": true,
+      "title": "Unsloth Dynamic 3.0 GGUFs",
+      "url": "https://unsloth.ai/docs/basics/dynamic-3.0-ggufs",
+      "hnUrl": "https://news.ycombinator.com/item?id=49365443",
+      "totalScore": 76.55257082590882,
+      "baseScore": 51.552570825908816,
+      "editorialScore": 25,
+      "publishedAt": "2026-08-19T18:36:45.000Z",
+      "summary": {
+        "zh": "Unsloth发布动态3.0 GGUF方案，优化本地LLM量化和推理体验。",
+        "en": "Unsloth releases Dynamic 3.0 GGUFs for better local LLM quantization and inference."
+      },
+      "reason": {
+        "zh": "对本地模型部署社区是实用升级，性能和易用性提升明显。",
+        "en": "Practical upgrade for local deployment; clear gains in performance and usability."
+      }
+    },
+    {
+      "key": "2026-08-21|https://github.com/zachahn/vomit",
+      "rank": 5,
+      "isTop5": true,
+      "title": "Clean up Claude 5's token vomit with a separate LLM",
+      "url": "https://github.com/zachahn/vomit",
+      "hnUrl": "https://news.ycombinator.com/item?id=49375996",
+      "totalScore": 74.87521531383331,
+      "baseScore": 51.87521531383331,
+      "editorialScore": 23,
+      "publishedAt": "2026-08-20T15:26:02.000Z",
+      "summary": {
+        "zh": "用另一个LLM清理Claude输出中的“token呕吐”，减少冗长噪音。",
+        "en": "Uses a separate LLM to clean up \"token vomit\" in Claude's output, reducing verbosity."
+      },
+      "reason": {
+        "zh": "对日常AI辅助写作和代码注释有实操价值，可直接部署。",
+        "en": "Practical for everyday AI-assisted writing and code comments; can be deployed directly."
+      }
+    },
+    {
+      "key": "2026-08-21|https://franciscotrindade.me/blog/the-kids-are-really-alright",
+      "rank": 6,
+      "isTop5": false,
+      "title": "AI didn't erase the junior engineer's value, it increased it it",
+      "url": "https://franciscotrindade.me/blog/the-kids-are-really-alright/",
+      "hnUrl": "https://news.ycombinator.com/item?id=49373269",
+      "totalScore": 71.06430851714603,
+      "baseScore": 50.06430851714604,
+      "editorialScore": 21,
+      "publishedAt": "2026-08-20T11:42:20.000Z",
+      "summary": {
+        "zh": "作者认为AI提升了初级工程师的价值，不是取代而是放大他们的学习与生产力。",
+        "en": "Author argues AI has increased junior engineers' value, amplifying learning and productivity."
+      },
+      "reason": {
+        "zh": "为团队人才培养和人机协作提供正向框架，具备实际管理启示。",
+        "en": "Provides positive framework for talent development and human-AI collaboration."
+      }
+    },
+    {
+      "key": "2026-08-21|https://www.mikekasberg.com/blog/2026/08/19/hacking-with-claude-on-a-27-smart-watch.html",
+      "rank": 7,
+      "isTop5": false,
+      "title": "Hacking with Claude on a $27 Smart Watch",
+      "url": "https://www.mikekasberg.com/blog/2026/08/19/hacking-with-claude-on-a-27-smart-watch.html",
+      "hnUrl": "https://news.ycombinator.com/item?id=49374772",
+      "totalScore": 70.44794254829826,
+      "baseScore": 49.44794254829826,
+      "editorialScore": 21,
+      "publishedAt": "2026-08-20T14:08:09.000Z",
+      "summary": {
+        "zh": "在27美元智能手表上让Claude干活，展示低成本硬件+AI的可行性。",
+        "en": "Running Claude on a $27 smart watch, showing low-cost hardware + AI feasibility."
+      },
+      "reason": {
+        "zh": "场景新颖，给边缘设备与可穿戴AI提供启发，动手者可按步骤复现。",
+        "en": "Novel scenario inspiring edge/wearable AI; hands-on readers can reproduce."
+      }
+    },
+    {
+      "key": "2026-08-21|https://ornith.ai/ornith_1_5.html",
+      "rank": 8,
+      "isTop5": false,
+      "title": "Ornith-1.5: From Self-Scaffolding to Self-Improvement",
+      "url": "https://ornith.ai/ornith_1_5.html",
+      "hnUrl": "https://news.ycombinator.com/item?id=49362401",
+      "totalScore": 68.99956262190159,
+      "baseScore": 47.99956262190158,
+      "editorialScore": 21,
+      "publishedAt": "2026-08-19T14:48:39.000Z",
+      "summary": {
+        "zh": "Ornith-1.5发布，从自我搭建支架进化到自我改进的Agent能力。",
+        "en": "Ornith-1.5 evolves AI agents from self-scaffolding to self-improvement."
+      },
+      "reason": {
+        "zh": "自我改进是Agent前沿方向，研究者和工程师都值得跟踪。",
+        "en": "Self-improvement is a frontier agent direction; worth tracking for researchers and engineers."
+      }
+    },
+    {
+      "key": "2026-08-21|https://jeremymorrell.dev/blog/extensible-software-in-the-age-of-llms",
+      "rank": 9,
+      "isTop5": false,
+      "title": "Extensible Software in the age of LLMs",
+      "url": "https://jeremymorrell.dev/blog/extensible-software-in-the-age-of-llms/",
+      "hnUrl": "https://news.ycombinator.com/item?id=49363668",
+      "totalScore": 68.5106127900032,
+      "baseScore": 47.510612790003194,
+      "editorialScore": 21,
+      "publishedAt": "2026-08-19T16:26:05.000Z",
+      "summary": {
+        "zh": "探讨LLM时代如何设计可扩展软件，让智能体更好利用开放扩展点。",
+        "en": "Explores designing extensible software so LLM agents can leverage open extension points."
+      },
+      "reason": {
+        "zh": "为软件架构师提供LLM原生设计思路，具备前瞻性和实践指导。",
+        "en": "Gives architects an LLM-native design perspective with forward-looking practical guidance."
+      }
+    },
+    {
+      "key": "2026-08-21|https://fx.sh/",
+      "rank": 10,
+      "isTop5": false,
+      "title": "fx :Tiny, open, native coding agent.",
+      "url": "https://fx.sh",
+      "hnUrl": "https://news.ycombinator.com/item?id=49353339",
+      "totalScore": 68.2313383768143,
+      "baseScore": 44.23133837681431,
+      "editorialScore": 24,
+      "publishedAt": "2026-08-18T22:00:21.000Z",
+      "summary": {
+        "zh": "fx是一个小巧、开放、原生的编码智能体，专注轻量级本地体验。",
+        "en": "fx is a tiny, open, native coding agent focused on lightweight local use."
+      },
+      "reason": {
+        "zh": "开源且强调原生轻量，适合开发者快速上手和嵌入工作流。",
+        "en": "Open source, lightweight, and native; quick to try and embed in workflows."
+      }
+    },
+    {
+      "key": "2026-08-21|https://arxiv.org/abs/2608.16753",
+      "rank": 11,
+      "isTop5": false,
+      "title": "Mathematics in the age of AI",
+      "url": "https://arxiv.org/abs/2608.16753",
+      "hnUrl": "https://news.ycombinator.com/item?id=49362728",
+      "totalScore": 67.7302822468238,
+      "baseScore": 47.730282246823805,
+      "editorialScore": 20,
+      "publishedAt": "2026-08-19T15:14:25.000Z",
+      "summary": {
+        "zh": "论文探讨AI时代数学研究的变化，包括证明辅助和发现新结构。",
+        "en": "Paper explores how AI changes mathematical research, including proof assistance and discovery."
+      },
+      "reason": {
+        "zh": "交叉领域高热度，为数学家和AI研究者提供合作与工具方向。",
+        "en": "High-interest interdisciplinary topic; suggests collaboration and tooling directions."
+      }
+    },
+    {
+      "key": "2026-08-21|https://github.com/onecli/onecli",
+      "rank": 12,
+      "isTop5": false,
+      "title": "Launch HN: OneCLI (YC S26) – OSS sandboxed agent harness for teams",
+      "url": "https://github.com/onecli/onecli",
+      "hnUrl": "https://news.ycombinator.com/item?id=49363710",
+      "totalScore": 66.82788120157181,
+      "baseScore": 42.82788120157181,
+      "editorialScore": 24,
+      "publishedAt": "2026-08-19T16:29:02.000Z",
+      "summary": {
+        "zh": "OneCLI是开源的沙箱化智能体工具链，帮助团队安全运行AI代理。",
+        "en": "OneCLI is an open-source sandboxed agent harness for teams to run AI agents safely."
+      },
+      "reason": {
+        "zh": "开源、可立即安装，直接解决团队采用AI代理的沙箱与集成问题。",
+        "en": "Open source and immediately usable; solves sandbox and integration issues for AI agent adoption."
+      }
+    },
+    {
+      "key": "2026-08-21|https://inco.ai/blog/dflash2",
+      "rank": 13,
+      "isTop5": false,
+      "title": "DFlash 2: Keep Drafting Parallel",
+      "url": "https://inco.ai/blog/dflash2/",
+      "hnUrl": "https://news.ycombinator.com/item?id=49366792",
+      "totalScore": 64.03067296618715,
+      "baseScore": 43.03067296618716,
+      "editorialScore": 21,
+      "publishedAt": "2026-08-19T20:28:43.000Z",
+      "summary": {
+        "zh": "DFlash 2提出并行草稿生成机制，进一步加速LLM推理。",
+        "en": "DFlash 2 introduces parallel drafting to further accelerate LLM inference."
+      },
+      "reason": {
+        "zh": "推理优化方向新颖，对部署成本和延迟敏感场景有参考。",
+        "en": "Novel inference optimization; relevant for cost- and latency-sensitive deployments."
+      }
+    },
+    {
+      "key": "2026-08-21|https://twitter.com/kuberwastaken/status/2089377982536388964",
+      "rank": 14,
+      "isTop5": false,
+      "title": "Claude writing a macOS driver for my obscure HP printer built only for Windows",
+      "url": "https://twitter.com/kuberwastaken/status/2089377982536388964",
+      "hnUrl": "https://news.ycombinator.com/item?id=49344643",
+      "totalScore": 63.480845219433256,
+      "baseScore": 44.480845219433256,
+      "editorialScore": 19,
+      "publishedAt": "2026-08-18T12:22:58.000Z",
+      "summary": {
+        "zh": "Claude帮用户为仅支持Windows的HP打印机编写macOS驱动。",
+        "en": "Claude wrote a macOS driver for an obscure HP printer built only for Windows."
+      },
+      "reason": {
+        "zh": "真实展示LLM逆向与驱动开发能力，启发性强但复现门槛较高。",
+        "en": "Real-world LLM reverse engineering and driver development inspiration, though hard to reproduce."
+      }
+    },
+    {
+      "key": "2026-08-21|https://blog.yaros.ae/anti-ai-fonts-are-useless-and-harmful",
+      "rank": 15,
+      "isTop5": false,
+      "title": "Anti-AI fonts are useless and harmful",
+      "url": "https://blog.yaros.ae/anti-ai-fonts-are-useless-and-harmful/",
+      "hnUrl": "https://news.ycombinator.com/item?id=49375719",
+      "totalScore": 62.605221451805974,
+      "baseScore": 46.605221451805974,
+      "editorialScore": 16,
+      "publishedAt": "2026-08-20T15:06:53.000Z",
+      "summary": {
+        "zh": "文章认为反AI字体既无用又有害，可能损害可读性和用户体验。",
+        "en": "Argues anti-AI fonts are useless and harmful, potentially hurting readability and UX."
+      },
+      "reason": {
+        "zh": "提醒团队不要依赖字体对抗AI抓取，应回归内容质量与可用性。",
+        "en": "Reminds teams not to rely on fonts against AI scraping; focus on content quality and usability."
+      }
+    },
+    {
+      "key": "2026-08-21|https://linear.app/data",
+      "rank": 16,
+      "isTop5": false,
+      "title": "AI usage patterns in software teams",
+      "url": "https://linear.app/data",
+      "hnUrl": "https://news.ycombinator.com/item?id=49353432",
+      "totalScore": 62.59019290296524,
+      "baseScore": 40.59019290296524,
+      "editorialScore": 22,
+      "publishedAt": "2026-08-18T22:08:07.000Z",
+      "summary": {
+        "zh": "Linear公开软件团队使用AI的真实数据，揭示用法、频率和最佳实践。",
+        "en": "Linear shares real data on how software teams use AI, showing patterns and best practices."
+      },
+      "reason": {
+        "zh": "数据驱动且可直接对标团队策略，帮助制定AI落地规范。",
+        "en": "Data-driven benchmark for team AI strategy and adoption norms."
+      }
+    },
+    {
+      "key": "2026-08-21|https://openai.com/index/asana",
+      "rank": 17,
+      "isTop5": false,
+      "title": "Asana cleared 5 years of engineering work in 2 weeks with Codex",
+      "url": "https://openai.com/index/asana/",
+      "hnUrl": "https://news.ycombinator.com/item?id=49370862",
+      "totalScore": 61.730688561959305,
+      "baseScore": 43.730688561959305,
+      "editorialScore": 18,
+      "publishedAt": "2026-08-20T05:54:20.000Z",
+      "summary": {
+        "zh": "OpenAI案例称Asana用Codex在两周内完成五年工程量。",
+        "en": "OpenAI case study says Asana used Codex to clear five years of engineering work in two weeks."
+      },
+      "reason": {
+        "zh": "展示AI大规模重构的潜力，但需理性看待厂商案例的可复制性。",
+        "en": "Shows potential for large-scale AI refactoring, but consider vendor-case reproducibility."
+      }
+    },
+    {
+      "key": "2026-08-21|https://openai.com/index/pacing-model-development-cyber-capabilities",
+      "rank": 18,
+      "isTop5": false,
+      "title": "Pacing model development in an era of cyber-critical capabilities",
+      "url": "https://openai.com/index/pacing-model-development-cyber-capabilities/",
+      "hnUrl": "https://news.ycombinator.com/item?id=49350031",
+      "totalScore": 60.75986084025616,
+      "baseScore": 42.75986084025616,
+      "editorialScore": 18,
+      "publishedAt": "2026-08-18T18:14:59.000Z",
+      "summary": {
+        "zh": "OpenAI提出在“网络关键能力”时代放慢模型开发节奏，匹配安全评估。",
+        "en": "OpenAI proposes pacing model development amid cyber-critical capabilities and safety assessments."
+      },
+      "reason": {
+        "zh": "涉及前沿模型安全与政策，值得AI治理和研发团队关注。",
+        "en": "Relevant to frontier model safety and policy; important for AI governance and R&D."
+      }
+    },
+    {
+      "key": "2026-08-21|https://hbr.org/2026/08/ai-is-undermining-leaders-judgment-heres-what-to-do-about-it",
+      "rank": 19,
+      "isTop5": false,
+      "title": "AI Is Undermining Leaders' Judgment. Here's What to Do About It",
+      "url": "https://hbr.org/2026/08/ai-is-undermining-leaders-judgment-heres-what-to-do-about-it",
+      "hnUrl": "https://news.ycombinator.com/item?id=49376089",
+      "totalScore": 56.735142762910115,
+      "baseScore": 35.735142762910115,
+      "editorialScore": 21,
+      "publishedAt": "2026-08-20T15:33:40.000Z",
+      "summary": {
+        "zh": "HBR文章讨论AI如何削弱领导者判断力，并提供应对建议。",
+        "en": "HBR piece discusses how AI undermines leaders' judgment and offers remedies."
+      },
+      "reason": {
+        "zh": "针对管理层AI依赖问题给出可执行建议，适合决策者阅读。",
+        "en": "Actionable advice for executives on AI over-reliance; good for decision makers."
+      }
+    },
+    {
+      "key": "2026-08-21|https://arxiv.org/abs/2601.00624",
+      "rank": 20,
+      "isTop5": false,
+      "title": "Do Chatbot LLMs Talk Too Much?",
+      "url": "https://arxiv.org/abs/2601.00624",
+      "hnUrl": "https://news.ycombinator.com/item?id=49374062",
+      "totalScore": 56.310573387152836,
+      "baseScore": 35.310573387152836,
+      "editorialScore": 21,
+      "publishedAt": "2026-08-20T13:01:03.000Z",
+      "summary": {
+        "zh": "论文研究聊天LLM是否过度冗长，分析对话中信息密度与用户偏好。",
+        "en": "Paper examines whether chat LLMs are overly verbose, analyzing information density and user preferences."
+      },
+      "reason": {
+        "zh": "对构建高效对话产品有直接参考价值，可指导输出控制策略。",
+        "en": "Directly useful for building efficient conversational products; informs output controls."
+      }
+    },
+    {
+      "key": "2026-08-21|https://sentrint.com/",
+      "rank": 21,
+      "isTop5": false,
+      "title": "Show HN: Sentrint, a security scanner for projects build with LLMs",
+      "url": "https://sentrint.com/",
+      "hnUrl": "https://news.ycombinator.com/item?id=49373895",
+      "totalScore": 55.8251764806803,
+      "baseScore": 32.8251764806803,
+      "editorialScore": 23,
+      "publishedAt": "2026-08-20T12:46:22.000Z",
+      "summary": {
+        "zh": "Show HN发布Sentrint，面向LLM构建项目的安全扫描器。",
+        "en": "Show HN presents Sentrint, a security scanner for projects built with LLMs."
+      },
+      "reason": {
+        "zh": "直接可用的安全工具，能补上LLM应用供应链的风险短板。",
+        "en": "Ready-to-use security tool addressing LLM application supply-chain risks."
+      }
+    },
+    {
+      "key": "2026-08-21|https://threedots.tech/post/ddd-and-ai-coding",
+      "rank": 22,
+      "isTop5": false,
+      "title": "DDD matters more when AI writes your code",
+      "url": "https://threedots.tech/post/ddd-and-ai-coding/",
+      "hnUrl": "https://news.ycombinator.com/item?id=49373041",
+      "totalScore": 54.834137988521896,
+      "baseScore": 33.834137988521896,
+      "editorialScore": 21,
+      "publishedAt": "2026-08-20T11:12:28.000Z",
+      "summary": {
+        "zh": "认为AI生成代码时代，领域驱动设计（DDD）比以往更重要。",
+        "en": "Argues domain-driven design matters even more when AI writes your code."
+      },
+      "reason": {
+        "zh": "给出具体架构约束方法，帮助提升AI代码的可维护性和业务对齐。",
+        "en": "Concrete architectural discipline improves maintainability and business alignment of AI code."
+      }
+    },
+    {
+      "key": "2026-08-21|https://sgoedecke.github.io/watermark-quiz",
+      "rank": 23,
+      "isTop5": false,
+      "title": "Guess which of these LLM outputs is watermarked",
+      "url": "https://sgoedecke.github.io/watermark-quiz/",
+      "hnUrl": "https://news.ycombinator.com/item?id=49374729",
+      "totalScore": 54.0150847595112,
+      "baseScore": 35.0150847595112,
+      "editorialScore": 19,
+      "publishedAt": "2026-08-20T14:03:58.000Z",
+      "summary": {
+        "zh": "在线测验让用户猜哪些LLM输出带有水印，普及AI水印识别。",
+        "en": "Quiz asks users to guess which LLM outputs are watermarked, raising awareness."
+      },
+      "reason": {
+        "zh": "以互动方式帮助理解LLM水印的可见性与检测难点，适合团队科普。",
+        "en": "Interactive way to understand LLM watermark visibility and detection; good for team education."
+      }
+    },
+    {
+      "key": "2026-08-21|https://arxiv.org/abs/2603.27017",
+      "rank": 24,
+      "isTop5": false,
+      "title": "Google's AI photoscanner can determine body fat through selfies",
+      "url": "https://arxiv.org/abs/2603.27017",
+      "hnUrl": "https://news.ycombinator.com/item?id=49373473",
+      "totalScore": 53.932070910173934,
+      "baseScore": 35.932070910173934,
+      "editorialScore": 18,
+      "publishedAt": "2026-08-20T12:06:37.000Z",
+      "summary": {
+        "zh": "谷歌AI照片扫描仪据称可通过自拍估算体脂率，引发隐私与健康应用讨论。",
+        "en": "Google's AI photoscanner allegedly estimates body fat from selfies, raising privacy and health concerns."
+      },
+      "reason": {
+        "zh": "技术新颖但涉及敏感生物信息，值得关注伦理与合规边界。",
+        "en": "Novel but involves sensitive biometric data; watch ethics and compliance."
+      }
+    },
+    {
+      "key": "2026-08-21|https://www.qawolf.com/blog/code-factories-without-quality",
+      "rank": 25,
+      "isTop5": false,
+      "title": "Code Factories Without Quality: The AI Development Blind Spot",
+      "url": "https://www.qawolf.com/blog/code-factories-without-quality",
+      "hnUrl": "https://news.ycombinator.com/item?id=49375253",
+      "totalScore": 53.3616498371714,
+      "baseScore": 33.3616498371714,
+      "editorialScore": 20,
+      "publishedAt": "2026-08-20T14:39:10.000Z",
+      "summary": {
+        "zh": "指出AI批量生成代码的“代码工厂”忽视质量风险，强调测试和质检。",
+        "en": "Warns \"code factories\" using AI overlook quality risks; emphasizes testing and QA."
+      },
+      "reason": {
+        "zh": "针对AI辅助开发的质量盲区提出具体改进方向，适合工程团队采纳。",
+        "en": "Identifies quality blind spots in AI-assisted development; engineering teams can act."
+      }
+    },
+    {
+      "key": "2026-08-21|https://www.campaignindia.in/article/linkedin-cracks-down-on-automated-content-with-new-seems-like-ai-slop-detection-button/43e4tn3qyq543rpam874wksjn3",
+      "rank": 26,
+      "isTop5": false,
+      "title": "LinkedIn cracks down on automated content with AI detection button",
+      "url": "https://www.campaignindia.in/article/linkedin-cracks-down-on-automated-content-with-new-seems-like-ai-slop-detection-button/43e4tn3qyq543rpam874wksjn3",
+      "hnUrl": "https://news.ycombinator.com/item?id=49373851",
+      "totalScore": 53.09746497353873,
+      "baseScore": 36.09746497353873,
+      "editorialScore": 17,
+      "publishedAt": "2026-08-20T12:42:42.000Z",
+      "summary": {
+        "zh": "LinkedIn用AI检测按钮打击自动化内容，治理“AI味”帖子。",
+        "en": "LinkedIn adds an AI detection button to curb automated content and AI slop."
+      },
+      "reason": {
+        "zh": "反映平台治理风向，内容运营者需调整AI生成内容策略。",
+        "en": "Reflects platform moderation trend; content operators should adjust AI use."
+      }
+    },
+    {
+      "key": "2026-08-21|https://www.autoriteitpersoonsgegevens.nl/en/current/ap-advises-twitch-users-opt-out-from-sharing-data-with-amazon-ai",
+      "rank": 27,
+      "isTop5": false,
+      "title": "Dutch data protection authority advises Twitch users to opt out from Amazon AI",
+      "url": "https://www.autoriteitpersoonsgegevens.nl/en/current/ap-advises-twitch-users-opt-out-from-sharing-data-with-amazon-ai",
+      "hnUrl": "https://news.ycombinator.com/item?id=49372781",
+      "totalScore": 51.422923593094424,
+      "baseScore": 33.422923593094424,
+      "editorialScore": 18,
+      "publishedAt": "2026-08-20T10:36:14.000Z",
+      "summary": {
+        "zh": "荷兰数据保护机构建议Twitch用户退出亚马逊AI数据共享。",
+        "en": "Dutch DPA advises Twitch users to opt out from Amazon AI data sharing."
+      },
+      "reason": {
+        "zh": "隐私监管信号清晰，用户和平台都需评估数据使用合规。",
+        "en": "Clear privacy regulatory signal; users and platforms should assess compliance."
+      }
+    },
+    {
+      "key": "2026-08-21|https://www.theguardian.com/society/2026/aug/20/yorkshire-rotherham-ai-gp-receptionist-cannot-understand-accent",
+      "rank": 28,
+      "isTop5": false,
+      "title": "Frustrated GP patients hang up as Yorkshire accent baffles AI receptionist",
+      "url": "https://www.theguardian.com/society/2026/aug/20/yorkshire-rotherham-ai-gp-receptionist-cannot-understand-accent",
+      "hnUrl": "https://news.ycombinator.com/item?id=49374304",
+      "totalScore": 51.16169000717418,
+      "baseScore": 35.16169000717418,
+      "editorialScore": 16,
+      "publishedAt": "2026-08-20T13:26:37.000Z",
+      "summary": {
+        "zh": "英国GP诊所的AI接诊员无法听懂约克郡口音，患者纷纷挂断。",
+        "en": "AI receptionist at a UK GP practice fails to understand Yorkshire accents; patients hang up."
+      },
+      "reason": {
+        "zh": "提醒AI语音落地的方言鲁棒性问题，产品团队应进行本地化测试。",
+        "en": "Highlights dialect robustness in AI voice; localize testing before deployment."
+      }
+    },
+    {
+      "key": "2026-08-21|https://www.nytimes.com/2026/08/20/style/ai-data-centers-teens.html",
+      "rank": 29,
+      "isTop5": false,
+      "title": "The Teens Taking on Data Centers",
+      "url": "https://www.nytimes.com/2026/08/20/style/ai-data-centers-teens.html",
+      "hnUrl": "https://news.ycombinator.com/item?id=49376337",
+      "totalScore": 49.70561240822469,
+      "baseScore": 35.70561240822469,
+      "editorialScore": 14,
+      "publishedAt": "2026-08-20T15:51:23.000Z",
+      "summary": {
+        "zh": "NYT报道青少年对抗数据中心建设，关注AI基础设施的社区影响。",
+        "en": "NYT covers teens protesting data center construction, highlighting community impact of AI infrastructure."
+      },
+      "reason": {
+        "zh": "提供AI硬件扩张的社会视角，适合关注行业外部性时参考。",
+        "en": "Offers social perspective on AI infrastructure expansion, useful for externalities awareness."
+      }
+    },
+    {
+      "key": "2026-08-21|https://arxiv.org/abs/2007.13664",
+      "rank": 30,
+      "isTop5": false,
+      "title": "Universality of Gradient Descent Neural Network Training",
+      "url": "https://arxiv.org/abs/2007.13664",
+      "hnUrl": "https://news.ycombinator.com/item?id=49368828",
+      "totalScore": 49.02879994107999,
+      "baseScore": 36.02879994107999,
+      "editorialScore": 13,
+      "publishedAt": "2026-08-20T00:05:12.000Z",
+      "summary": {
+        "zh": "论文证明梯度下降训练神经网络的普适性，属于理论结果。",
+        "en": "Paper proves universality of gradient descent NN training; theoretical result."
+      },
+      "reason": {
+        "zh": "理论价值高，但并非新近突破，适合理论研究者延伸。",
+        "en": "Strong theory but not new; suited for researchers exploring theoretical foundations."
+      }
+    }
+  ]
+}
